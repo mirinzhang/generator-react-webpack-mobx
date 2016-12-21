@@ -1,16 +1,23 @@
 {
   "name": "generator-react-webpack-mobx",
-  "version": "1.0.0",
-  "description": "react project",
+  "version": "1.0.1",
+  "description": "基于Webpack、Mobxjs、React-router和Eslint的React脚手架",
+  "main": "index.js",
+  "scripts": { "test": "echo \"Error: no test specified\" && exit 1" },
   "files": [
     "generators"
   ],
   "keywords": [
     "yeoman-generator"
   ],
-  "repository": "https://github.com/ybing/react-webpack-mobx.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MiRinZhang/generator-react-webpack-mobx.git"
+  },
   "author": "MiRinZhang <noodles@yabing.me>",
-  "license": "ISC",
+  "license": "MIT",
+  "bugs": { "url": "https://github.com/MiRinZhang/generator-react-webpack-mobx/issues"},
+  "homepage": "https://github.com/MiRinZhang/generator-react-webpack-mobx",
   "dependencies": {
     "chalk": "^1.1.3",
     "yeoman-generator": "^1.0.1",

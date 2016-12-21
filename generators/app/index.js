@@ -85,10 +85,7 @@ module.exports = class extends Generator {
         this.props.author = this.props.author || 'MiRinZhang <noodles@yabing.me>';
 
         // static config
-        let dirList = [
-            'src', '.babelrc', '.editorconfig',
-            '.gitignore', 'README.md'
-        ];
+        let dirList = [ 'src', '.babelrc', '.editorconfig','README.md'];
 
         // custom config
         let customConfig = [
