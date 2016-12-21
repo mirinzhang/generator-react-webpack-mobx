@@ -1,0 +1,19 @@
+{
+  "name": "generator-react-webpack-mobx",
+  "version": "1.0.0",
+  "description": "react project",
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "repository": "https://github.com/ybing/react-webpack-mobx.git",
+  "author": "MiRinZhang <noodles@yabing.me>",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "yeoman-generator": "^1.0.1",
+    "yosay": "^1.2.1"
+  }
+}
