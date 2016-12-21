@@ -1,6 +1,6 @@
 {
   "name": "generator-react-webpack-mobx",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "基于Webpack、Mobxjs、React-router和Eslint的React脚手架",
   "main": "index.js",
   "scripts": { "test": "echo \"Error: no test specified\" && exit 1" },
