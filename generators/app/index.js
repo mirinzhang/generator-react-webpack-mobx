@@ -103,13 +103,16 @@ module.exports = class extends Generator {
                 template: `${templatePath}/package.json`,
                 destination: 'package.json',
                 params: {params: this.props}
-            },
+            }
         ];
 
         // use or not eslint
         if(this.props.eslint) {
             dirList = dirList.concat(['.eslintrc']);
         }
+
+        // copy .npmignore to .gitignore
+        this.fs.copy(`${templatePath}/.npmignore`, `${this.projectDir}/.gitignore`);
 
         // copy static config
         dirList.forEach((name) => {
@@ -128,12 +131,12 @@ module.exports = class extends Generator {
 
     install() {
         this.log(chalk.blue('\nStart install package...\n'));
-        this.runTipText = `Run ${chalk.cyan('npm run dev')} or ${chalk.cyan('yarn dev')} to start`;
+        this.runTipText = `Run\n ${chalk.cyan('npm run dev')} or ${chalk.cyan('yarn dev')} \nto start`;
 
         if(this.projectDir){
             const subDir = process.cwd() + '/' + this.projectDir;
             process.chdir(subDir);
-            this.runTipText = `Run ${chalk.cyan('cd ' + this.projectDir + ' && npm run dev')} or ${chalk.cyan('cd ' + this.projectDir + ' && yarn dev')} to start`;
+            this.runTipText = `Run\n ${chalk.cyan('cd ' + this.projectDir + ' && npm run dev')} or ${chalk.cyan('cd ' + this.projectDir + ' && yarn dev')} \nto start`;
         }
 
         let done = this.async();
