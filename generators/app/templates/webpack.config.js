@@ -54,7 +54,8 @@ module.exports = {
         new HtmlWebpackPlugin({
           filename: 'index.html',
           template: 'index.html',
-          inject: true
+          inject: true,
+          hash: true,
         }),
     ]
 };
@@ -69,6 +70,7 @@ if (process.env.NODE_ENV === 'production') {
           filename: 'index.html',
           template: 'index.html',
           inject: true,
+          hash: true,
           minify: {
             removeComments: true,
             collapseWhitespace: true,
