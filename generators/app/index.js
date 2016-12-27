@@ -130,13 +130,13 @@ module.exports = class extends Generator {
     }
 
     install() {
-        this.log(chalk.blue('\nStart install package...\n'));
-        this.runTipText = `Run\n ${chalk.cyan('npm run dev')} or ${chalk.cyan('yarn dev')} \nto start`;
+        this.log(chalk.blue('\nInstalling packages\n'));
+        this.runTipText = `Run\n ${chalk.cyan('npm run dev')} or ${chalk.cyan('yarn dev')} \nto start the project`;
 
         if(this.projectDir){
             const subDir = process.cwd() + '/' + this.projectDir;
             process.chdir(subDir);
-            this.runTipText = `Run\n ${chalk.cyan('cd ' + this.projectDir + ' && npm run dev')} or ${chalk.cyan('cd ' + this.projectDir + ' && yarn dev')} \nto start`;
+            this.runTipText = `Run\n ${chalk.cyan('cd ' + this.projectDir + ' && npm run dev')} or ${chalk.cyan('cd ' + this.projectDir + ' && yarn dev')} \nto start the project`;
         }
 
         let done = this.async();
@@ -153,9 +153,8 @@ module.exports = class extends Generator {
 
     end() {
         this.log(yosay(
-            'Successfully!'
+            `${chalk.yellow('Successfully!')}\nEnjoy it!'`
         ));
-        this.log(chalk.yellow('Package install finished'));
         this.log(this.runTipText);
     }
 };

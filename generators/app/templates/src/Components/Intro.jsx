@@ -5,9 +5,9 @@ export default class Intro extends Component {
     return (
       <div className="intro-container">
         <div className="intro">
-          <h3>描述：react项目基本结构</h3>
-          <h3>技术栈：react + react-router + mobxjs</h3>
-          <h3>工具：webpack + eslint + babel</h3>
+          <h2>A react project</h2>
+          <h2>Usage</h2>
+          <h3>React、Webpack、React-Router、Mobxjs(、Eslint)</h3>
         </div>
       </div>
     );
