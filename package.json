@@ -1,7 +1,7 @@
 {
   "name": "generator-react-webpack-mobx",
-  "version": "1.0.6",
-  "description": "基于Webpack、Mobxjs、React-router和Eslint的React脚手架",
+  "version": "1.0.8",
+  "description": "A react boilerplate with webpack(2.2.1)、React-router(3.0.2)、Mobxjs(3.1.0) and fetch(2.0.2)",
   "main": "index.js",
   "scripts": { "test": "echo \"Error: no test specified\" && exit 1" },
   "files": [
@@ -12,12 +12,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/MiRinZhang/generator-react-webpack-mobx.git"
+    "url": "https://github.com/MiRinZhang/react-webpack-mobx.git"
   },
   "author": "MiRinZhang <noodles@yabing.me>",
   "license": "MIT",
-  "bugs": { "url": "https://github.com/MiRinZhang/generator-react-webpack-mobx/issues"},
-  "homepage": "https://github.com/MiRinZhang/generator-react-webpack-mobx",
+  "bugs": { "url": "https://github.com/MiRinZhang/react-webpack-mobx/issues"},
+  "homepage": "https://github.com/MiRinZhang/react-webpack-mobx",
   "dependencies": {
     "chalk": "^1.1.3",
     "yeoman-generator": "^1.0.1",

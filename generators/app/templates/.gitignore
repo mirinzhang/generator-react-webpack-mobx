@@ -1,5 +1,6 @@
 # IntelliJ project files
 .idea
-out
-gen
+*.iml
+dist
+npm-debug.log
 node_modules
