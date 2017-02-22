@@ -1,6 +1,6 @@
 {
   "name": "generator-react-webpack-mobx",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A react boilerplate with webpack(2.2.1)、React-router(3.0.2)、Mobxjs(3.1.0) and fetch(2.0.2)",
   "main": "index.js",
   "scripts": { "test": "echo \"Error: no test specified\" && exit 1" },

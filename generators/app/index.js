@@ -7,7 +7,7 @@ module.exports = class extends Generator {
         super(args, opts);
 
         this.projectName = args[0] || this.appname;
-        this.projectDir = !!args[0] ? `${args[0]}/` : '';
+        this.projectDir = !!args[0] ? `${args[0]}/` : './';
     }
 
     prompting() {
@@ -112,7 +112,7 @@ module.exports = class extends Generator {
         }
 
         // copy .npmignore to .gitignore
-        this.fs.copy(`${templatePath}/.npmignore`, `${this.projectDir}/.gitignore`);
+        this.fs.copy(`${templatePath}/.gitignore`, `${this.projectDir}.gitignore`);
 
         // copy static config
         dirList.forEach((name) => {
@@ -133,7 +133,7 @@ module.exports = class extends Generator {
         this.log(chalk.blue('\nInstalling packages\n'));
         this.runTipText = `Run\n ${chalk.cyan('npm run dev')} or ${chalk.cyan('yarn dev')} \nto start the project`;
 
-        if(this.projectDir){
+        if(this.projectDir !== './'){
             const subDir = process.cwd() + '/' + this.projectDir;
             process.chdir(subDir);
             this.runTipText = `Run\n ${chalk.cyan('cd ' + this.projectDir + ' && npm run dev')} or ${chalk.cyan('cd ' + this.projectDir + ' && yarn dev')} \nto start the project`;
