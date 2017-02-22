@@ -112,7 +112,7 @@ module.exports = class extends Generator {
         }
 
         // copy .npmignore to .gitignore
-        this.fs.copy(`${templatePath}/.gitignore`, `${this.projectDir}.gitignore`);
+        this.fs.copy(`${templatePath}/.npmignore`, `${this.projectDir}.gitignore`);
 
         // copy static config
         dirList.forEach((name) => {
