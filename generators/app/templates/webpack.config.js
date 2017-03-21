@@ -4,7 +4,10 @@ const path = require("path"),
     ExtractTextPlugin = require("extract-text-webpack-plugin"),
     HOST = "0.0.0.0",
     PORT = 4040;
-let commonPlugins = [];
+let commonPlugins = [],
+    cssExtract = process.env.NODE_ENV === "production"
+        ? ExtractTextPlugin.extract({ fallback: "style", use: [ "css", "postcss", "sass" ], })
+        : [ "style", "css", "postcss", "sass" ];
 
 module.exports = {
     devServer: {
@@ -41,21 +44,12 @@ module.exports = {
             },
             {
                 test: /\.(scss|sass)$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: "style",
-                    use: ["css", "postcss", "sass"],
-                }),
+                use: cssExtract,
                 exclude: /node_modules/,
             }
         ]
     },
-    plugins: [
-        new ExtractTextPlugin({
-            filename: "bundle.css",
-            disable: false,
-            allChunks: true
-        }),
-    ]
+    plugins: []
 };
 
 if (process.env.NODE_ENV === "production") {
@@ -63,6 +57,11 @@ if (process.env.NODE_ENV === "production") {
         new webpack.optimize.CommonsChunkPlugin({
             name: "vendor",
             filename: "vendor.bundle.js"
+        }),
+        new ExtractTextPlugin({
+            filename: "[name].style.[contenthash].css",
+            disable: false,
+            allChunks: true
         }),
         new HtmlWebpackPlugin({
             filename: "index.html",
